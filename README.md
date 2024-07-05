@@ -27,5 +27,4 @@ Make sure you have the following installed on your local machine:
    ```bash
    git clone https://github.com/Christabel091/Todo_site.git
    cd Todo_site
-
    ```
