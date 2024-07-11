@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class TodoList extends Component {
   render() {
-    const { items, clearList, handleDelete } = this.props;
+    const { items, clearList, handleDelete, handleedit } = this.props;
     return (
       <>
         <h3 className="text-capitalize text-center">Todo-item</h3>
@@ -14,6 +14,7 @@ export default class TodoList extends Component {
             return (
               <TodoItem
                 handleDelete={() => handleDelete(item.id)}
+                handleedit={() => handleedit(item.id)}
                 key={item.id}
                 title={item.item}
               />

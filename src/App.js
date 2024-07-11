@@ -46,6 +46,16 @@ export default class App extends Component {
       items: sortedItems,
     });
   };
+  handleedit = (id) => {
+    const filteredItem = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      items: filteredItem,
+      item: selectedItem.item,
+      editItem: true,
+      id: id,
+    });
+  };
   render() {
     return (
       <div className="container">
@@ -56,11 +66,13 @@ export default class App extends Component {
               item={this.state.item}
               handletodo={this.handleChange}
               handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
             />
             <TodoList
               items={this.state.items}
               clearList={this.clearList}
               handleDelete={this.handleDelete}
+              handleedit={this.handleedit}
             />
           </div>
         </div>

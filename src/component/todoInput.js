@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class TodoInput extends Component {
   render() {
-    const { item, handletodo, handleSubmit } = this.props;
+    const { item, handletodo, handleSubmit, editItem } = this.props;
     return (
       <div className="card card-body mt-3">
         <form onSubmit={handleSubmit}>
@@ -20,7 +20,15 @@ export default class TodoInput extends Component {
           </div>
 
           <div className="list-group">
-            <button className="btn btn-block btn-primary">Add item</button>
+            <button
+              className={
+                editItem
+                  ? "btn btn-block btn-success mt-3"
+                  : "btn btn-block btn-primary mt-3"
+              }
+            >
+              {editItem ? "edit item" : "Add item"}
+            </button>
           </div>
         </form>
       </div>
